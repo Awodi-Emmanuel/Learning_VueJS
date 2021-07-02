@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container py-5" id="app">
+    <h2>Top 10 Frameworks</h2>
+
+      <ul class="list-group">
+        <li class="list-group-item" v-for="framework in topTenFrameworks">
+          {{ framework }}
+        </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          topTenFrameworks: [
+            "Ruby",
+            "ASP.NET",
+            "Ruby on Rails",
+            "ASP.NET MVC",
+            "React",
+            "Django",
+            "Angular",
+            "Laravel",
+            "Js",
+            "python",
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
