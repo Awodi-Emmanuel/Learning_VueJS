@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container py-5" id="app">
+        <h1>Vote Your Favorite Frameworks</h1>
+      <ul class="list-group">
+        <li
+          v-for="framework in favoriteFrameworks"
+          class="list-group-item d-flex justify-content-between"
+        >
+          {{ framework.name }}
+          <button @click="upvote(framework)" class="btn btn-outline-primary">
+            Upvote
+            <span class="badge-primary badge-pill">{{ framework.votes }}</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          favoriteFrameworks: [
+            { name: "AngularJs", votes: 0 },
+            { name: "React.Js", votes: 0 },
+            { name: "Vue.js", votes: 0 },
+          ],
+        },
+        methods: {
+            upvote(framework) {
+                framework.votes++;
+            }
+        }
+      });
+    </script>
+  </body>
+</html>

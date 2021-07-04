@@ -12,17 +12,24 @@
   </head>
   <body>
     <div class="container py-5" id="app">
-      <div v-if="showAlertPrimary" class="alert alert-primary">
-        v-if Alert
-      </div>
+      <div v-if="showAlertPrimary" class="alert alert-primary">v-if Alert</div>
       <div v-show="showAlertSecondary" class="alert alert-secondary">
-          v-show Alert
-
+        v-show Alert
       </div>
 
       <div>
-          <button v-on:click="showAlertSecondary = !showAlertPrimary" class="btn btn-primary">Toggle Message (v-if)</button>
-         <button  v-on:click="showAlertSecondary = !showAlertSeconday" class="btn btn-secondary">Toggle Message (v-show)</button>
+        <button
+          v-on:click="showAlertSecondary = !showAlertPrimary"
+          class="btn btn-primary"
+        >
+          Toggle Message (v-if)
+        </button>
+        <button
+          v-on:click="showAlertSecondary = !showAlertSeconday"
+          class="btn btn-secondary"
+        >
+          Toggle Message (v-show)
+        </button>
       </div>
     </div>
 
@@ -32,9 +39,8 @@
         el: "#app",
         data: {
           showAlertPrimary: true,
-          showAlertSecondary: true
-
-        }
+          showAlertSecondary: true,
+        },
       });
     </script>
   </body>
