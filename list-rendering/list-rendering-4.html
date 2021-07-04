@@ -15,24 +15,24 @@
       <h2>Top 10 Frameworks</h2>
       <ul class="list-group">
         <li
-          v-for="(framework, index) of topTenFrameworks"
+          v-for="(score, framework) of topTenFrameworks"
           class="
             list-group-item
             d-flex
             justify-content-between
             align-items-center
           "
-          v-for="(score, framework) of topTenFrameworks"
         >
-          {{ framework  }}
-          <span class="badge badge-primary badge-pill">{{ score}}</span>
+          {{ framework }}
+          <span class="badge badge-primary badge-pill">100</span>
         </li>
       </ul>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script>
       new Vue({
-        el: "#app",
+        el: "#app", 
         data: {
           topTenFrameworks: {
             "AngularJS": 100,
@@ -41,13 +41,12 @@
             "ASP.NET MVC": 79,
             "React": 70,
             "laravel": 65,
-            "java": 61,
             "Express": 57,
             "spring": 52,
-            "Django": 40
+            "Django": 40,
+            "Express": 87
+          }
         }
-
-        },
       });
     </script>
   </body>
