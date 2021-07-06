@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Binding</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      #box {
+        min-width: 300px;
+        min-height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5" id="app">
+      <div
+        id="box"
+        class="row"
+        :class="[ hovered ? 'bg-primary' : 'bg-info' ]"
+        @mouseover="hovered = true"
+        @mouseout="hovered = false"
+      >
+        <div class="col my-auto text-center text-light">
+          Mouse over here</div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          hovered: false,
+        },
+      });
+    </script>
+  </body>
+</html>
