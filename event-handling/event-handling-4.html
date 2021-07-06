@@ -32,20 +32,15 @@
         </li>
       </ul>
 
-      <form action="" v-on:submit.prevent="handleSubmit">
-        <div class="input-group">
-          <input v-model="framework"
-            type="text"
-            class="form-controller"
-            placeholder="Enter Your favorite framework"
-          />
-          <div class="input-group-append">
-            <button type="submit" clas="btn btn-outline-secondary">
-              submit
-            </button>
-          </div>
-        </div>
-      </form>
+      <div class="form-group">
+        <input
+          v-on:keyup.enter="handleSubmit"
+          v-model="framework"
+          type="text"
+          class="form-control"
+          placeholder="Enter Your favorite framework"
+        />
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -58,18 +53,21 @@
             { name: "React.js", votes: 0 },
             { name: "Vue.js", votes: 0 },
           ],
-          framework: ''
+          framework: "",
         },
         methods: {
           upvote(framework) {
             framework.votes++;
           },
           handleSubmit() {
-            this.favoriteFrameworks.push({
+            if (this.framework.trim()) {
+              this.favoriteFrameworks.push({
                 name: this.framework,
-                votes: 0
-            });
-            this.framework = ''
+                votes: 0,
+              });
+
+              this.framework = "";
+            }
           },
         },
       });
